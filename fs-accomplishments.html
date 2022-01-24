@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accomplishments PLugin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-flex-container">
+        
+        <div class="nav-container">
+            
+            <ul class="sticky-nav">
+                <br><br><br>
+                <a href="#about"><li>About</li></a>
+                <a href="#quick-use"><li>Quick Use</li></a>
+                <a href="#create-shortcodes"><li>Create Shortcodes</li></a>
+                <a href="#create-post-type"><li>Create Custom Post Type</li></a>
+                <a href="#create-acf"><li>Create Custom Fields</li></a>
+                <a href="#rest-api"><li>Rest API</li></a>
+                <a href="#future-updates"><li>Future Updates</li></a>
+            </ul>
+        </div>
+        <div class="container">
+            <a class="scroll-anchor" id="about" href="">About</a>
+            <section>
+            <br><br>
+            <a href="index.html"><<< Back</a>
+            
+            <h1>FS Accomplishments<span style="font-weight:200"> Feature Documentation</span></h1>
+            <ul>
+                <li>Author: Nick Chiccola - <a href="mailto:nick.chiccola@franklinst.com">nick.chiccola@franklinst.com</a></li>
+                <li>Created: 01-21-2022</li>
+                <li>Version: 1.0.0</li>
+                <li>Dependencies: <a href="https://wordpress.org/plugins/custom-post-type-ui/">Custom Post Type UI</a>, <a href="https://www.advancedcustomfields.com/">Advanced Custom Fields</a>, <a href="https://wordpress.org/plugins/code-snippets/">Code Snippets</a></li>
+            </ul>
+    
+            
+            <p><i>FS Accomplishments</i> is a feature update to franklinst.com which allows for easy management of key Franklin Street metrics across the site.</p>
+            
+            </section>
+
+            <a class="scroll-anchor" id="quick-use" href="">Quick Use</a>
+            <section>
+                <h2>Quick Use</h2>
+
+                <ol>
+                    <li>Update field values in the Accomplishments post. (Do not create a new post)  ---> <a href="https://franklinst.com/wp-admin/post.php?post=7490&action=edit">Edit Accomplishments</a></li> 
+                    <li>Use The Following Shortcodes on Any Page of Franklinst.com</li>
+                </ol>
+                <p><b>ShortCodes</b></p>
+                <ul>
+                    <li>[fs-stats-transaction-volume]</li>
+                    <li>[fs-stats-loan-originations]</li>
+                    <li>[fs-stats-insurance-carrier-partners]</li>
+                    <li>[fs-stats-multifamily-units]</li>
+                    <li>[fs-stats-commercial-sqft]</li>
+                    <li>[fs-stats-experts-collaborating]</li>
+                    <li>[fs-stats-cre-contacts]</li>
+                    <li>[fs-stats-investment-sales]</li>
+                    <li>[fs-stats-total-projects]</li>
+                    <li>[fs-stats-average-savings]</li>
+                    <li>[fs-stats-sqft-project-management]</li>
+                    <li>[fs-stats-completed-development]</li>
+                    <li>[fs-stats-organizations-supported]</li>
+                    <li>[fs-stats-hours-volunteered]</li>
+                    <li>[fs-stats-raised-donated]</li>
+                </ul>
+            </section>
+    
+            <br><br>
+            <h2>READ MORE & Technical Docs</h2>
+
+<!-- CREATE SHORTCODES -->
+            <details>
+                <summary>Create Shortcodes</summary>
+                <a class="scroll-anchor" id="create-shortcodes" href="">Create Shortcodes</a>
+            <section>
+            
+            <br><br>
+            <h2>Create Shortcodes</h2>
+            <div class="block">
+                <h3>Last Year's Transaction Volume</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-transaction-volume]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for Last Year's Transaction Volume
+                        function last_year_transaction_volume( $atts ) {
+                            $transaction_volume = get_field('last_year_transaction_volume', 7490);
+                            echo $transaction_volume;
+                        }
+                        add_shortcode( 'fs-stats-transaction-volume', 'last_year_transaction_volume' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Loan Originations</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-loan-originations]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for total_in_loan_originations
+                        function total_in_loan_originations( $atts ) {
+                            $loan_originations = get_field('total_in_loan_originations', 7490);
+                            echo $loan_originations;
+                        }
+                        add_shortcode( 'fs-stats-loan-originations', 'total_in_loan_originations' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Number of Insurance Carrier Partners</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-insurance-carrier-partners]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for number_of_insurance_carrier_partners
+                        function number_of_insurance_carrier_partners( $atts ) {
+                            $insurance_carrier_partners = get_field('number_of_insurance_carrier_partners', 7490);
+                            echo $insurance_carrier_partners;
+                        }
+                        add_shortcode( 'fs-stats-insurance-carrier-partners', 'number_of_insurance_carrier_partners' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Number of Multifamily Units</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-multifamily-units]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for number_of_multifamily_units
+                        function number_of_multifamily_units( $atts ) {
+                            $multifamily_units = get_field('number_of_multifamily_units', 7490);
+                            echo $multifamily_units;
+                        }
+                        add_shortcode( 'fs-stats-multifamily-units', 'number_of_multifamily_units' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Total Number of Commercial Square Feet</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-commercial-sqft]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for total_commercial_square_feet
+                        function total_commercial_square_feet( $atts ) {
+                            $commercial_sqft = get_field('total_commercial_square_feet', 7490);
+                            echo $commercial_sqft;
+                        }
+                        add_shortcode( 'fs-stats-commercial-sqft', 'total_commercial_square_feet' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Number of Franklin Street Experts Collaborating</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-experts-collaborating]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for number_of_experts_collaborating
+                        function number_of_experts_collaborating( $atts ) {
+                            $experts_collaborating = get_field('number_of_experts_collaborating', 7490);
+                            echo $experts_collaborating;
+                        }
+                        add_shortcode( 'fs-stats-experts-collaborating', 'number_of_experts_collaborating' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Number of CRE and Broker Contacts</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-cre-contacts]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for number_of_cre_and_broker_contacts
+                        function number_of_cre_and_broker_contacts( $atts ) {
+                            $cre_contacts = get_field('number_of_cre_and_broker_contacts', 7490);
+                            echo $cre_contacts;
+                        }
+                        add_shortcode( 'fs-stats-cre-contacts', 'number_of_cre_and_broker_contacts' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Last Year's Investment Sales Transaction</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-investment-sales]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for last_year_investment_sales_transaction
+                        function last_year_investment_sales_transaction( $atts ) {
+                            $investment_sales_transaction = get_field('last_year_investment_sales_transaction', 7490);
+                            echo $investment_sales_transaction;
+                        }
+                        add_shortcode( 'fs-stats-investment-sales', 'last_year_investment_sales_transaction' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Total Number of Franklin Street Projects</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-total-projects]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for number_of_total_projects
+                        function number_of_total_projects( $atts ) {
+                            $total_projects = get_field('number_of_total_projects', 7490);
+                            echo $total_projects;
+                        }
+                        add_shortcode( 'fs-stats-total-projects', 'number_of_total_projects' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Average Annual Savings For Our Clients</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-average-savings]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for average_annual_savings_for_our_clients
+                        function average_annual_savings_for_our_clients( $atts ) {
+                            $average_savings = get_field('average_annual_savings_for_our_clients', 7490);
+                            echo $average_savings;
+                        }
+                        add_shortcode( 'fs-stats-average-savings', 'average_annual_savings_for_our_clients' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Total Square Feet of Property Under Management</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-sqft-project-management]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for square_feet_of_project_management_services
+                        function square_feet_of_project_management_services( $atts ) {
+                            $sqft_project_management = get_field('square_feet_of_project_management_services', 7490);
+                            echo $sqft_project_management;
+                        }
+                        add_shortcode( 'fs-stats-sqft-project-management', 'square_feet_of_project_management_services' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Total Amount in Completed Development</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-completed-development]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for amount_in_completed_development
+                        function amount_in_completed_development( $atts ) {
+                            $completed_development = get_field('amount_in_completed_development', 7490);
+                            echo $completed_development;
+                        }
+                        add_shortcode( 'fs-stats-completed-development', 'amount_in_completed_development' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Total Number of Organizations Supported</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-organizations-supported]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for number_of_organizations_supported
+                        function number_of_organizations_supported( $atts ) {
+                            $organizations_supported = get_field('number_of_organizations_supported', 7490);
+                            echo $organizations_supported;
+                        }
+                        add_shortcode( 'fs-stats-organizations-supported', 'number_of_organizations_supported' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Total Number of Hours Volunteered</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-hours-volunteered]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for number_of_hours_volunteered
+                        function number_of_hours_volunteered( $atts ) {
+                            $hours_volunteered = get_field('number_of_hours_volunteered', 7490);
+                            echo $hours_volunteered;
+                        }
+                        add_shortcode( 'fs-stats-hours-volunteered', 'number_of_hours_volunteered' );
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="block">
+                <h3>Amount Raised & Donated by Franklin Street</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-raised-donated]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for amount_raised_and_donated
+                        function amount_raised_and_donated( $atts ) {
+                            $raised_donated = get_field('amount_raised_and_donated', 7490);
+                            echo $raised_donated;
+                        }
+                        add_shortcode( 'fs-stats-raised-donated', 'amount_raised_and_donated' );
+                    </pre>
+                </div>
+            </div>
+            <hr>
+                
+            </section>
+            </details>
+            
+<!-- CREATE POST TYPE -->
+            <details>
+                <summary>Create Custom Post Type</summary>
+                <a class="scroll-anchor" id="create-post-type" href="">Create Post Type</a>
+                <section id="">
+                    <h2>Create Accomplishments Post Type</h2>
+            
+                    <div class="block">
+                        <h3>Create Accomplishments Post Type</h3>
+                        <div class="code-block">
+                            <pre>
+                                <div class="block">
+                                    <h3>Custom Post Type (CPTUI) Paste This Code into the CPTUI Import Tool</h2>
+                                    <div class="code-block">
+                                        <pre>
+                                            {"fs_stats":{"name":"fs_stats","label":"Accomplishments","singular_label":"Accomplishment","description":"Franklin Street Metrics of Success in all Commercial Real Estate services","public":"true","publicly_queryable":"true","show_ui":"true","show_in_nav_menus":"true","delete_with_user":"false","show_in_rest":"true","rest_base":"","rest_controller_class":"","has_archive":"false","has_archive_string":"","exclude_from_search":"true","capability_type":"post","hierarchical":"false","rewrite":"true","rewrite_slug":"","rewrite_withfront":"true","query_var":"true","query_var_slug":"","menu_position":"","show_in_menu":"true","show_in_menu_string":"","menu_icon":"dashicons-chart-bar","supports":["title","editor","thumbnail"],"taxonomies":[],"labels":{"menu_name":"FS Stats","all_items":"All Stats","add_new":"","add_new_item":"","edit_item":"","new_item":"","view_item":"","view_items":"","search_items":"","not_found":"","not_found_in_trash":"","parent_item_colon":"","featured_image":"","set_featured_image":"","remove_featured_image":"","use_featured_image":"","archives":"","insert_into_item":"","uploaded_to_this_item":"","filter_items_list":"","items_list_navigation":"","items_list":"","attributes":"","name_admin_bar":"","item_published":"","item_published_privately":"","item_reverted_to_draft":"","item_scheduled":"","item_updated":""},"custom_supports":""}}
+                                            
+                                        </pre>
+                                    </div>
+                                </div>
+                                <div class="block">
+                                    <h3>Or, paste this code into the functions.php file</h2>
+                                    <div class="code-block">
+                                        <pre>
+                                            function cptui_register_my_cpts_fs_stats() {
+                        
+                                                /**
+                                                * Post Type: Accomplishments.
+                                                */
+                                            
+                                                $labels = [
+                                                    "name" => __( "Accomplishments", "custom-post-type-ui" ),
+                                                    "singular_name" => __( "Accomplishment", "custom-post-type-ui" ),
+                                                    "menu_name" => __( "FS Stats", "custom-post-type-ui" ),
+                                                    "all_items" => __( "All Stats", "custom-post-type-ui" ),
+                                                ];
+                                            
+                                                $args = [
+                                                    "label" => __( "Accomplishments", "custom-post-type-ui" ),
+                                                    "labels" => $labels,
+                                                    "description" => "Franklin Street Metrics of Success in all Commercial Real Estate services",
+                                                    "public" => true,
+                                                    "publicly_queryable" => true,
+                                                    "show_ui" => true,
+                                                    "show_in_rest" => true,
+                                                    "rest_base" => "",
+                                                    "rest_controller_class" => "WP_REST_Posts_Controller",
+                                                    "has_archive" => false,
+                                                    "show_in_menu" => true,
+                                                    "show_in_nav_menus" => true,
+                                                    "delete_with_user" => false,
+                                                    "exclude_from_search" => true,
+                                                    "capability_type" => "post",
+                                                    "map_meta_cap" => true,
+                                                    "hierarchical" => false,
+                                                    "rewrite" => [ "slug" => "fs_stats", "with_front" => true ],
+                                                    "query_var" => true,
+                                                    "menu_icon" => "dashicons-chart-bar",
+                                                    "supports" => [ "title", "editor", "thumbnail" ],
+                                                    "show_in_graphql" => false,
+                                                ];
+                                            
+                                                register_post_type( "fs_stats", $args );
+                                            }
+                                            
+                                            add_action( 'init', 'cptui_register_my_cpts_fs_stats' );
+                                            
+                                        </pre>
+                                    </div>
+                                </div>
+                            </pre>
+                        </div>
+                    </div>
+    
+                </section>
+            </details>
+
+<!-- CREATE CUSTOM FIELDS -->
+            <details>
+                <summary>Create Custom Fields For Accomplishments Post Type</summary>
+                <a class="scroll-anchor" id="create-acf" href="">Create ACF</a>
+                <section id="">
+                    <h2>Create Custom Fields for Accomplishments Post Type</h2>
+                    <div class="block">
+                        <h3>Create custom Fields for Accomplishments Post Type</h3>
+                        <div class="code-block">
+                            <pre>
+                                <div class="block">
+                                    <h3>Add to Theme's functions.php or include in external file</h3>
+                                    <div class="code-block">
+                                        
+                                        <pre>
+                                            if( function_exists('acf_add_local_field_group') ):
+                
+                                            acf_add_local_field_group(array(
+                                                'key' => 'group_61e982d7bf8ba',
+                                                'title' => 'fs-stats',
+                                                'fields' => array(
+                                                    array(
+                                                        'key' => 'field_61e983196f49d',
+                                                        'label' => 'last_year_transaction_volume',
+                                                        'name' => 'last_year_transaction_volume',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter Franklin Street\'s total Transaction Volume last year',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e983826f49e',
+                                                        'label' => 'total_in_loan_originations',
+                                                        'name' => 'total_in_loan_originations',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the total $ amount in Loan Originations',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e983ac6f49f',
+                                                        'label' => 'number_of_insurance_carrier_partners',
+                                                        'name' => 'number_of_insurance_carrier_partners',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the number of Franklin Street\'s Insurance Carrier Partners',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e983c56f4a0',
+                                                        'label' => 'number_of_multifamily_units',
+                                                        'name' => 'number_of_multifamily_units',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the total number of Franklin Street\'s Multifamily Units',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e983df6f4a1',
+                                                        'label' => 'total_commercial_square_feet',
+                                                        'name' => 'total_commercial_square_feet',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the total number of Franklin Street\'s Commercial Square Feet',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e983fd6f4a2',
+                                                        'label' => 'number_of_experts_collaborating',
+                                                        'name' => 'number_of_experts_collaborating',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the total number of Franklin Street Experts who are Collaborating',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e984346f4a3',
+                                                        'label' => 'number_of_cre_and_broker_contacts',
+                                                        'name' => 'number_of_cre_and_broker_contacts',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the number of Franklin Street\'s CRE and Broker Contacts',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e9844b6f4a4',
+                                                        'label' => 'last_year_investment_sales_transaction',
+                                                        'name' => 'last_year_investment_sales_transaction',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter Franklin Street\'s total Investment Sales Transaction last year',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e984706f4a5',
+                                                        'label' => 'number_of_total_projects',
+                                                        'name' => 'number_of_total_projects',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the total number of Projects',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e984856f4a6',
+                                                        'label' => 'average_annual_savings_for_our_clients',
+                                                        'name' => 'average_annual_savings_for_our_clients',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the Average Annual Savings for Franklin Street\'s clients',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e9849a6f4a7',
+                                                        'label' => 'square_feet_of_project_management_services',
+                                                        'name' => 'square_feet_of_project_management_services',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the total Square Feet of Franklin Street Project Management Services',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e984be6f4a8',
+                                                        'label' => 'amount_in_completed_development',
+                                                        'name' => 'amount_in_completed_development',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the total $ Amount in Completed Development',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e984d46f4a9',
+                                                        'label' => 'number_of_organizations_supported',
+                                                        'name' => 'number_of_organizations_supported',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the total number of Organizations Supported by Franklin Street',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e984ea6f4aa',
+                                                        'label' => 'number_of_hours_volunteered',
+                                                        'name' => 'number_of_hours_volunteered',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the total number of Hours Volunteered by Franklin Street Team',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61e985086f4ab',
+                                                        'label' => 'amount_raised_and_donated',
+                                                        'name' => 'amount_raised_and_donated',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter the Total Amount Raised and Donated by Franklin Street',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                ),
+                                                'location' => array(
+                                                    array(
+                                                        array(
+                                                            'param' => 'post_type',
+                                                            'operator' => '==',
+                                                            'value' => 'fs_stats',
+                                                        ),
+                                                    ),
+                                                    array(
+                                                        array(
+                                                            'param' => 'post_type',
+                                                            'operator' => '==',
+                                                            'value' => 'win',
+                                                        ),
+                                                    ),
+                                                ),
+                                                'menu_order' => 0,
+                                                'position' => 'normal',
+                                                'style' => 'default',
+                                                'label_placement' => 'left',
+                                                'instruction_placement' => 'label',
+                                                'hide_on_screen' => '',
+                                                'active' => true,
+                                                'description' => '',
+                                                'show_in_rest' => 1,
+                                                'acfe_display_title' => '',
+                                                'acfe_autosync' => '',
+                                                'acfe_form' => 0,
+                                                'acfe_meta' => '',
+                                                'acfe_note' => '',
+                                            ));
+                                            
+                                            endif;		
+                                        </pre>
+                                    </div>
+                                </div>
+                                <div class="block">
+                                    <h3>Custom Field's JSON</h3>
+                                    <div class="code-block">
+                                        <pre>
+                                            [
+                    {
+                        "key": "group_61e982d7bf8ba",
+                        "title": "fs-stats",
+                        "fields": [
+                            {
+                                "key": "field_61e983196f49d",
+                                "label": "last_year_transaction_volume",
+                                "name": "last_year_transaction_volume",
+                                "type": "number",
+                                "instructions": "Enter Franklin Street's total Transaction Volume last year",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e983826f49e",
+                                "label": "total_in_loan_originations",
+                                "name": "total_in_loan_originations",
+                                "type": "number",
+                                "instructions": "Enter the total $ amount in Loan Originations",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e983ac6f49f",
+                                "label": "number_of_insurance_carrier_partners",
+                                "name": "number_of_insurance_carrier_partners",
+                                "type": "number",
+                                "instructions": "Enter the number of Franklin Street's Insurance Carrier Partners",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e983c56f4a0",
+                                "label": "number_of_multifamily_units",
+                                "name": "number_of_multifamily_units",
+                                "type": "number",
+                                "instructions": "Enter the total number of Franklin Street's Multifamily Units",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e983df6f4a1",
+                                "label": "total_commercial_square_feet",
+                                "name": "total_commercial_square_feet",
+                                "type": "number",
+                                "instructions": "Enter the total number of Franklin Street's Commercial Square Feet",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e983fd6f4a2",
+                                "label": "number_of_experts_collaborating",
+                                "name": "number_of_experts_collaborating",
+                                "type": "number",
+                                "instructions": "Enter the total number of Franklin Street Experts who are Collaborating",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e984346f4a3",
+                                "label": "number_of_cre_and_broker_contacts",
+                                "name": "number_of_cre_and_broker_contacts",
+                                "type": "number",
+                                "instructions": "Enter the number of Franklin Street's CRE and Broker Contacts",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e9844b6f4a4",
+                                "label": "last_year_investment_sales_transaction",
+                                "name": "last_year_investment_sales_transaction",
+                                "type": "number",
+                                "instructions": "Enter Franklin Street's total Investment Sales Transaction last year",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e984706f4a5",
+                                "label": "number_of_total_projects",
+                                "name": "number_of_total_projects",
+                                "type": "number",
+                                "instructions": "Enter the total number of Projects",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e984856f4a6",
+                                "label": "average_annual_savings_for_our_clients",
+                                "name": "average_annual_savings_for_our_clients",
+                                "type": "number",
+                                "instructions": "Enter the Average Annual Savings for Franklin Street's clients",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e9849a6f4a7",
+                                "label": "square_feet_of_project_management_services",
+                                "name": "square_feet_of_project_management_services",
+                                "type": "number",
+                                "instructions": "Enter the total Square Feet of Franklin Street Project Management Services",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e984be6f4a8",
+                                "label": "amount_in_completed_development",
+                                "name": "amount_in_completed_development",
+                                "type": "number",
+                                "instructions": "Enter the total $ Amount in Completed Development",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e984d46f4a9",
+                                "label": "number_of_organizations_supported",
+                                "name": "number_of_organizations_supported",
+                                "type": "number",
+                                "instructions": "Enter the total number of Organizations Supported by Franklin Street",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e984ea6f4aa",
+                                "label": "number_of_hours_volunteered",
+                                "name": "number_of_hours_volunteered",
+                                "type": "number",
+                                "instructions": "Enter the total number of Hours Volunteered by Franklin Street Team",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_61e985086f4ab",
+                                "label": "amount_raised_and_donated",
+                                "name": "amount_raised_and_donated",
+                                "type": "number",
+                                "instructions": "Enter the Total Amount Raised and Donated by Franklin Street",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            }
+                        ],
+                        "location": [
+                            [
+                                {
+                                    "param": "post_type",
+                                    "operator": "==",
+                                    "value": "fs_stats"
+                                }
+                            ],
+                            [
+                                {
+                                    "param": "post_type",
+                                    "operator": "==",
+                                    "value": "win"
+                                }
+                            ]
+                        ],
+                        "menu_order": 0,
+                        "position": "normal",
+                        "style": "default",
+                        "label_placement": "left",
+                        "instruction_placement": "label",
+                        "hide_on_screen": "",
+                        "active": true,
+                        "description": "",
+                        "show_in_rest": 1,
+                        "acfe_display_title": "",
+                        "acfe_autosync": "",
+                        "acfe_form": 0,
+                        "acfe_meta": "",
+                        "acfe_note": ""
+                    }
+                ]
+                                        </pre>
+                                    </div>
+                                </div>
+                            </pre>
+                        </div>
+                    </div>
+            
+                </section>
+            </details>
+        
+<!-- REST API -->
+            <details>
+                <summary>REST API</summary>
+                <a class="scroll-anchor" id="rest-api" href="">Rest API</a>
+                <section id="">
+                    <h2>REST API</h2>
+                    <div class="block">
+                        <div class="code-block">
+                            <pre>
+                                https://franklinst.com/wp-json/wp/v2/fs_stats?_fields[]=acf
+    
+                                __________Results____________
+                                [
+                                    {
+                                        "acf": {
+                                            "last_year_transaction_volume": 1483677351,
+                                            "total_in_loan_originations": 750000000,
+                                            "number_of_insurance_carrier_partners": 280,
+                                            "number_of_multifamily_units": 450000,
+                                            "total_commercial_square_feet": 35000000,
+                                            "number_of_experts_collaborating": 30,
+                                            "number_of_cre_and_broker_contacts": 130000,
+                                            "last_year_investment_sales_transaction": 434234984,
+                                            "number_of_total_projects": 2000,
+                                            "average_annual_savings_for_our_clients": 1827963,
+                                            "square_feet_of_project_management_services": 30000000,
+                                            "amount_in_completed_development": 1000000000,
+                                            "number_of_organizations_supported": 20,
+                                            "number_of_hours_volunteered": 468,
+                                            "amount_raised_and_donated": 11289
+                                        }
+                                    }
+                                ]
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+            </details>
+
+<!-- FUTURE UPDATES -->
+            <details>
+                <summary>Future Updates</summary>
+                <a class="scroll-anchor" id="future-updates" href="">Future Updates</a>
+                <section id="">
+                    <h2>Future Updates</h2>
+                    <div class="block">
+                        Future Updates Coming Soon...
+                    </div>
+            
+                </section>
+            </details>
+
+    
+        </div>
+        
+    </div>
+
+
+    <script>
+        // Fetch all the details element.
+        const details = document.querySelectorAll("details");
+
+        // Add the onclick listeners.
+        details.forEach((targetDetail) => {
+        targetDetail.addEventListener("click", () => {
+            // Close all the details that are not targetDetail.
+            details.forEach((detail) => {
+            if (detail !== targetDetail) {
+                detail.removeAttribute("open");
+            }
+            });
+        });
+        });
+    </script>
+
+</body>
+</html>
