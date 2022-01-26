@@ -121,7 +121,13 @@ pre {
     text-decoration: none;
     color:white;
     font-weight: 600;
-    line-height:2em;
+    line-height:2em;    
+}
+
+.sticky-nav>a>li {
+    border-bottom:1px solid white;
+    padding-bottom:5px;
+    margin-bottom:5px;
 }
 
 .sticky-nav>a:hover {
@@ -146,6 +152,15 @@ pre {
     .sticky-nav > *:not(:last-child) {
         border-right: 1px solid white;
         padding-right:15px;
+    }
+    .sticky-nav a {
+        border-bottom:none;
+    }
+
+    .sticky-nav>a>li {
+        border-bottom:none;
+        padding-bottom:0px;
+        margin-bottom:0px;
     }
 
     .main-flex-container {
