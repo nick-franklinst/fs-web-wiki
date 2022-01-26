@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accomplishments PLugin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-flex-container">
+        
+
+
+        <div class="nav-container">
+        
+            <div class="mobile-nav">
+                <details>
+                    <summary>Menu</summary>
+
+                    <ul class="sticky-mobile-nav">
+                        <a href="#about"><li>About</li></a>
+                        <a href="#rest-api"><li>Rest API</li></a>
+                        <a href="#future-updates"><li>Future Updates</li></a>
+                    </ul>
+                </details>
+            </div>
+            <ul class="sticky-nav">
+                <br><br><br>
+                <a href="#about"><li>About</li></a>
+                <a href="#rest-api"><li>Rest API</li></a>
+                <a href="#future-updates"><li>Future Updates</li></a>
+            </ul>
+        </div>
+        <div class="container">
+            <a class="scroll-anchor" id="about" href="">About</a>
+            <section>
+            <br><br>
+            <a href="index.html"><<< Back</a>
+            
+            <h1>FS User Profiles<span style="font-weight:200"> Feature Documentation</span></h1>
+            <ul>
+                <li>Authors: Nick Chiccola, Daniel Troyer - <a href="mailto:nick.chiccola@franklinst.com">nick.chiccola@franklinst.com</a></li>
+                <li>Created: COMING SOON</li>
+                <li>Version: 0.0.0</li>
+                <li>Dependencies: Excel, Power Query, WordPress Rest API, BSD User Profiles</li>
+            </ul>
+    
+            
+            <p><i>FS User Profiles</i> is a feature update to franklinst.com which allows for easy, automated management of Franklin Street Team User Profiles on Franklinst.com</p>
+            
+            </section>
+
+    
+            <br><br>
+            <h2>READ MORE & Technical Docs</h2>
+
+
+<!-- REST API -->
+            <details>
+                <summary>REST API</summary>
+                <a class="scroll-anchor" id="rest-api" href="">Rest API</a>
+                <section id="">
+                    <h2>REST API</h2>
+                    <div class="block">
+                        <div class="code-block">
+                            <pre>
+                                https://franklinst.com/wp-json/wp/v2/bsd_user_profile?per_page=100&_fields[]=title
+    
+                                __________Results____________
+                                [
+                                    {
+                                        "title": {
+                                            "rendered": "Michael Chesnover"
+                                        }
+                                    },
+                                    {
+                                        "title": {
+                                            "rendered": "Steven Logan"
+                                        }
+                                    },
+                                    {
+                                        "title": {
+                                            "rendered": "Alex Lazo"
+                                        }
+                                    },
+                                    {
+                                        "title": {
+                                            "rendered": "Lorenzo Gonzalez"
+                                        }
+                                    },
+                                    {
+                                        "title": {
+                                            "rendered": "Brad Hutton"
+                                        }
+                                    }
+                                ]
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+            </details>
+
+<!-- FUTURE UPDATES -->
+            <details>
+                <summary>Future Updates</summary>
+                <a class="scroll-anchor" id="future-updates" href="">Future Updates</a>
+                <section id="">
+                    <h2>Future Updates</h2>
+                    <div class="block">
+                        <ul>
+                            <li>Automatically Receive New Hire, Promotion, Termination Reports</li>
+                            <li>Cross Reference Reports With User Profiles on Franklinst.com</li>
+                            <li>Determine Which Team Members Will Have User Profiles on Franklinst.com</li>
+                            <li>Create, Read, Update, Delete User Profiles</li>
+                            <li>Package into Plugin or Standalone Application</li>
+                        </ul>
+
+                        <a href="https://www.thebiccountant.com/2018/06/17/automatically-expand-all-fields-from-a-json-document-in-power-bi-and-power-query/" targer="_blank">Code to flatten Json Response in Power Query</a>
+                    </div>
+            
+                </section>
+            </details>
+
+    
+        </div>
+        
+    </div>
+
+
+    <script>
+        // Fetch all the details element.
+        const details = document.querySelectorAll("details");
+
+        // Add the onclick listeners.
+        details.forEach((targetDetail) => {
+        targetDetail.addEventListener("click", () => {
+            // Close all the details that are not targetDetail.
+            details.forEach((detail) => {
+            if (detail !== targetDetail) {
+                detail.removeAttribute("open");
+            }
+            });
+        });
+        });
+    </script>
+
+</body>
+</html>

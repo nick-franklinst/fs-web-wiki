@@ -130,7 +130,7 @@ pre {
     max-width:200px;
 }
 
-.app-container img:hover {
+.app-container:hover {
     transform: scale(105%);
     box-shadow: 6px 6px 10px 0px rgba(0,0,0,0.22);
     -webkit-box-shadow: 6px 6px 10px 0px rgba(0,0,0,0.22);
