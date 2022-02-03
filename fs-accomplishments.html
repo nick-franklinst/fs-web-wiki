@@ -449,7 +449,7 @@
                                         
                                         <pre>
                                             if( function_exists('acf_add_local_field_group') ):
-                
+
                                             acf_add_local_field_group(array(
                                                 'key' => 'group_61e982d7bf8ba',
                                                 'title' => 'fs-stats',
@@ -460,6 +460,27 @@
                                                         'name' => 'last_year_transaction_volume',
                                                         'type' => 'number',
                                                         'instructions' => 'Enter Franklin Street\'s total Transaction Volume last year',
+                                                        'required' => 1,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'min' => '',
+                                                        'max' => '',
+                                                        'step' => '',
+                                                    ),
+                                                    array(
+                                                        'key' => 'field_61fc1cdfda7f0',
+                                                        'label' => 'last_year_multifamily_transaction_volume',
+                                                        'name' => 'last_year_multifamily_transaction_volume',
+                                                        'type' => 'number',
+                                                        'instructions' => 'Enter Franklin Street\'s total Multifamily Transaction Volume last year',
                                                         'required' => 1,
                                                         'conditional_logic' => 0,
                                                         'wrapper' => array(
@@ -769,6 +790,25 @@
                                                         'max' => '',
                                                         'step' => '',
                                                     ),
+                                                    array(
+                                                        'key' => 'field_61fc1cd2da7ef',
+                                                        'label' => '',
+                                                        'name' => '',
+                                                        'type' => 'text',
+                                                        'instructions' => '',
+                                                        'required' => 0,
+                                                        'conditional_logic' => 0,
+                                                        'wrapper' => array(
+                                                            'width' => '',
+                                                            'class' => '',
+                                                            'id' => '',
+                                                        ),
+                                                        'default_value' => '',
+                                                        'placeholder' => '',
+                                                        'prepend' => '',
+                                                        'append' => '',
+                                                        'maxlength' => '',
+                                                    ),
                                                 ),
                                                 'location' => array(
                                                     array(
@@ -776,13 +816,6 @@
                                                             'param' => 'post_type',
                                                             'operator' => '==',
                                                             'value' => 'fs_stats',
-                                                        ),
-                                                    ),
-                                                    array(
-                                                        array(
-                                                            'param' => 'post_type',
-                                                            'operator' => '==',
-                                                            'value' => 'win',
                                                         ),
                                                     ),
                                                 ),
@@ -811,359 +844,392 @@
                                     <div class="code-block">
                                         <pre>
                                             [
-                    {
-                        "key": "group_61e982d7bf8ba",
-                        "title": "fs-stats",
-                        "fields": [
-                            {
-                                "key": "field_61e983196f49d",
-                                "label": "last_year_transaction_volume",
-                                "name": "last_year_transaction_volume",
-                                "type": "number",
-                                "instructions": "Enter Franklin Street's total Transaction Volume last year",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e983826f49e",
-                                "label": "total_in_loan_originations",
-                                "name": "total_in_loan_originations",
-                                "type": "number",
-                                "instructions": "Enter the total $ amount in Loan Originations",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e983ac6f49f",
-                                "label": "number_of_insurance_carrier_partners",
-                                "name": "number_of_insurance_carrier_partners",
-                                "type": "number",
-                                "instructions": "Enter the number of Franklin Street's Insurance Carrier Partners",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e983c56f4a0",
-                                "label": "number_of_multifamily_units",
-                                "name": "number_of_multifamily_units",
-                                "type": "number",
-                                "instructions": "Enter the total number of Franklin Street's Multifamily Units",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e983df6f4a1",
-                                "label": "total_commercial_square_feet",
-                                "name": "total_commercial_square_feet",
-                                "type": "number",
-                                "instructions": "Enter the total number of Franklin Street's Commercial Square Feet",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e983fd6f4a2",
-                                "label": "number_of_experts_collaborating",
-                                "name": "number_of_experts_collaborating",
-                                "type": "number",
-                                "instructions": "Enter the total number of Franklin Street Experts who are Collaborating",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e984346f4a3",
-                                "label": "number_of_cre_and_broker_contacts",
-                                "name": "number_of_cre_and_broker_contacts",
-                                "type": "number",
-                                "instructions": "Enter the number of Franklin Street's CRE and Broker Contacts",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e9844b6f4a4",
-                                "label": "last_year_investment_sales_transaction",
-                                "name": "last_year_investment_sales_transaction",
-                                "type": "number",
-                                "instructions": "Enter Franklin Street's total Investment Sales Transaction last year",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e984706f4a5",
-                                "label": "number_of_total_projects",
-                                "name": "number_of_total_projects",
-                                "type": "number",
-                                "instructions": "Enter the total number of Projects",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e984856f4a6",
-                                "label": "average_annual_savings_for_our_clients",
-                                "name": "average_annual_savings_for_our_clients",
-                                "type": "number",
-                                "instructions": "Enter the Average Annual Savings for Franklin Street's clients",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e9849a6f4a7",
-                                "label": "square_feet_of_project_management_services",
-                                "name": "square_feet_of_project_management_services",
-                                "type": "number",
-                                "instructions": "Enter the total Square Feet of Franklin Street Project Management Services",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e984be6f4a8",
-                                "label": "amount_in_completed_development",
-                                "name": "amount_in_completed_development",
-                                "type": "number",
-                                "instructions": "Enter the total $ Amount in Completed Development",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e984d46f4a9",
-                                "label": "number_of_organizations_supported",
-                                "name": "number_of_organizations_supported",
-                                "type": "number",
-                                "instructions": "Enter the total number of Organizations Supported by Franklin Street",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e984ea6f4aa",
-                                "label": "number_of_hours_volunteered",
-                                "name": "number_of_hours_volunteered",
-                                "type": "number",
-                                "instructions": "Enter the total number of Hours Volunteered by Franklin Street Team",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            },
-                            {
-                                "key": "field_61e985086f4ab",
-                                "label": "amount_raised_and_donated",
-                                "name": "amount_raised_and_donated",
-                                "type": "number",
-                                "instructions": "Enter the Total Amount Raised and Donated by Franklin Street",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "min": "",
-                                "max": "",
-                                "step": ""
-                            }
-                        ],
-                        "location": [
-                            [
-                                {
-                                    "param": "post_type",
-                                    "operator": "==",
-                                    "value": "fs_stats"
-                                }
-                            ],
-                            [
-                                {
-                                    "param": "post_type",
-                                    "operator": "==",
-                                    "value": "win"
-                                }
-                            ]
-                        ],
-                        "menu_order": 0,
-                        "position": "normal",
-                        "style": "default",
-                        "label_placement": "left",
-                        "instruction_placement": "label",
-                        "hide_on_screen": "",
-                        "active": true,
-                        "description": "",
-                        "show_in_rest": 1,
-                        "acfe_display_title": "",
-                        "acfe_autosync": "",
-                        "acfe_form": 0,
-                        "acfe_meta": "",
-                        "acfe_note": ""
-                    }
-                ]
-                                        </pre>
+                                            {
+                                                "key": "group_61e982d7bf8ba",
+                                                "title": "fs-stats",
+                                                "fields": [
+                                                    {
+                                                        "key": "field_61e983196f49d",
+                                                        "label": "last_year_transaction_volume",
+                                                        "name": "last_year_transaction_volume",
+                                                        "type": "number",
+                                                        "instructions": "Enter Franklin Street's total Transaction Volume last year",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61fc1cdfda7f0",
+                                                        "label": "last_year_multifamily_transaction_volume",
+                                                        "name": "last_year_multifamily_transaction_volume",
+                                                        "type": "number",
+                                                        "instructions": "Enter Franklin Street's total Multifamily Transaction Volume last year",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e983826f49e",
+                                                        "label": "total_in_loan_originations",
+                                                        "name": "total_in_loan_originations",
+                                                        "type": "number",
+                                                        "instructions": "Enter the total $ amount in Loan Originations",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e983ac6f49f",
+                                                        "label": "number_of_insurance_carrier_partners",
+                                                        "name": "number_of_insurance_carrier_partners",
+                                                        "type": "number",
+                                                        "instructions": "Enter the number of Franklin Street's Insurance Carrier Partners",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e983c56f4a0",
+                                                        "label": "number_of_multifamily_units",
+                                                        "name": "number_of_multifamily_units",
+                                                        "type": "number",
+                                                        "instructions": "Enter the total number of Franklin Street's Multifamily Units",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e983df6f4a1",
+                                                        "label": "total_commercial_square_feet",
+                                                        "name": "total_commercial_square_feet",
+                                                        "type": "number",
+                                                        "instructions": "Enter the total number of Franklin Street's Commercial Square Feet",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e983fd6f4a2",
+                                                        "label": "number_of_experts_collaborating",
+                                                        "name": "number_of_experts_collaborating",
+                                                        "type": "number",
+                                                        "instructions": "Enter the total number of Franklin Street Experts who are Collaborating",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e984346f4a3",
+                                                        "label": "number_of_cre_and_broker_contacts",
+                                                        "name": "number_of_cre_and_broker_contacts",
+                                                        "type": "number",
+                                                        "instructions": "Enter the number of Franklin Street's CRE and Broker Contacts",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e9844b6f4a4",
+                                                        "label": "last_year_investment_sales_transaction",
+                                                        "name": "last_year_investment_sales_transaction",
+                                                        "type": "number",
+                                                        "instructions": "Enter Franklin Street's total Investment Sales Transaction last year",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e984706f4a5",
+                                                        "label": "number_of_total_projects",
+                                                        "name": "number_of_total_projects",
+                                                        "type": "number",
+                                                        "instructions": "Enter the total number of Projects",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e984856f4a6",
+                                                        "label": "average_annual_savings_for_our_clients",
+                                                        "name": "average_annual_savings_for_our_clients",
+                                                        "type": "number",
+                                                        "instructions": "Enter the Average Annual Savings for Franklin Street's clients",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e9849a6f4a7",
+                                                        "label": "square_feet_of_project_management_services",
+                                                        "name": "square_feet_of_project_management_services",
+                                                        "type": "number",
+                                                        "instructions": "Enter the total Square Feet of Franklin Street Project Management Services",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e984be6f4a8",
+                                                        "label": "amount_in_completed_development",
+                                                        "name": "amount_in_completed_development",
+                                                        "type": "number",
+                                                        "instructions": "Enter the total $ Amount in Completed Development",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e984d46f4a9",
+                                                        "label": "number_of_organizations_supported",
+                                                        "name": "number_of_organizations_supported",
+                                                        "type": "number",
+                                                        "instructions": "Enter the total number of Organizations Supported by Franklin Street",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e984ea6f4aa",
+                                                        "label": "number_of_hours_volunteered",
+                                                        "name": "number_of_hours_volunteered",
+                                                        "type": "number",
+                                                        "instructions": "Enter the total number of Hours Volunteered by Franklin Street Team",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61e985086f4ab",
+                                                        "label": "amount_raised_and_donated",
+                                                        "name": "amount_raised_and_donated",
+                                                        "type": "number",
+                                                        "instructions": "Enter the Total Amount Raised and Donated by Franklin Street",
+                                                        "required": 1,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "min": "",
+                                                        "max": "",
+                                                        "step": ""
+                                                    },
+                                                    {
+                                                        "key": "field_61fc1cd2da7ef",
+                                                        "label": "",
+                                                        "name": "",
+                                                        "type": "text",
+                                                        "instructions": "",
+                                                        "required": 0,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "maxlength": ""
+                                                    }
+                                                ],
+                                                "location": [
+                                                    [
+                                                        {
+                                                            "param": "post_type",
+                                                            "operator": "==",
+                                                            "value": "fs_stats"
+                                                        }
+                                                    ]
+                                                ],
+                                                "menu_order": 0,
+                                                "position": "normal",
+                                                "style": "default",
+                                                "label_placement": "left",
+                                                "instruction_placement": "label",
+                                                "hide_on_screen": "",
+                                                "active": true,
+                                                "description": "",
+                                                "show_in_rest": 1,
+                                                "acfe_display_title": "",
+                                                "acfe_autosync": "",
+                                                "acfe_form": 0,
+                                                "acfe_meta": "",
+                                                "acfe_note": ""
+                                            }
+                                        ]
+                                    </pre>
                                     </div>
                                 </div>
                             </pre>

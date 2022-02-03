@@ -10,6 +10,10 @@ List of shortcodes:
 [fs-stats-transaction-volume]
 
 
+// ShortCode for Last Year's Multifamily Transaction Volume
+[fs-stats-transaction-volume]
+
+
 // ShortCode for total_in_loan_originations
 [fs-stats-loan-originations]
 
