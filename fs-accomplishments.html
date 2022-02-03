@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accomplishments PLugin</title>
+    <title>Accomplishments Plugin</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -69,8 +69,21 @@
                     <li>Use The Following Shortcodes on Any Page of Franklinst.com</li>
                 </ol>
                 <p><b>ShortCodes</b></p>
+
+
+                <!-- <h3>Insurance</h3>
+                    <ul>
+
+                    </ul>
+                <h3>Property Management</h3>
+                <h3>Project Management</h3>
+                <h3>Retail</h3>
+                <h3>Construction</h3> -->
+
+
                 <ul>
                     <li>[fs-stats-transaction-volume]</li>
+                    <li>[fs-stats-multifamily-transaction-volume]</li>
                     <li>[fs-stats-loan-originations]</li>
                     <li>[fs-stats-insurance-carrier-partners]</li>
                     <li>[fs-stats-multifamily-units]</li>
@@ -110,6 +123,21 @@
                             echo $transaction_volume;
                         }
                         add_shortcode( 'fs-stats-transaction-volume', 'last_year_transaction_volume' );
+                    </pre>
+                </div>
+            </div>
+
+            <div class="block">
+                <h3>Last Year's Multifamily Transaction Volume</h3>
+                <p>Franklinst.com Shortcode: [fs-stats-transaction-volume]</p>
+                <div class="code-block">
+                    <pre>
+                        // Create a ShortCode for Last Year's Multifamily Sales Volume
+                        function last_year_multifamily_transaction_volume( $atts ) {
+                            $multifamily_transaction_volume = get_field('last_year_multifamily_transaction_volume', 7490);
+                            echo $multifamily_transaction_volume;
+                        }
+                        add_shortcode( 'fs-stats-multifamily-transaction-volume', 'last_year_multifamily_transaction_volume' );
                     </pre>
                 </div>
             </div>
